@@ -45,6 +45,6 @@ Primero la release y después la web: así `version.json` nunca apunta a un arch
 - [ ] `python3 build.py` sin `--demo`
 - [ ] Crear el alias de correo `contacto@martinezpenya.es`
 - [x] Nombre del responsable en la política de privacidad
-- [ ] Añadir capturas reales del móvil
+- [x] Capturas reales de la app (generadas con tool/capturas en el repo de la app)
 - [ ] DNS: `CNAME giracolchon → martinezpenya.github.io`
 - [ ] GitHub: Pages desde `main` / `docs`, dominio `giracolchon.martinezpenya.es`, Enforce HTTPS

@@ -98,6 +98,15 @@ p { margin: 0; }
   border-radius: 32px; padding: 20px;
 }
 .hero-art img { display: block; width: 100%; border-radius: 20px; background: var(--ground); }
+.hero-phone {
+  width: min(330px, 100%); justify-self: end; border-radius: 44px; background: #0f1226; padding: 10px;
+  box-shadow: 0 30px 80px rgba(10,12,40,.45);
+}
+.hero-phone img { display: block; width: 100%; height: auto; border-radius: 34px; }
+.step-shot {
+  display: block; width: 100%; height: auto; aspect-ratio: 412 / 560; object-fit: cover;
+  object-position: top; border-radius: 16px; border: 1px solid var(--line); margin-bottom: 8px;
+}
 .actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding-top: 8px; }
 
 .btn {
@@ -185,10 +194,7 @@ p { margin: 0; }
 }
 .phone-screen { border-radius: 30px; background: var(--ground); padding: 28px 16px 36px; display: flex; flex-direction: column; gap: 12px; }
 .ad { background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; overflow: hidden; }
-.ad-img {
-  width: 96px; min-height: 96px; flex-shrink: 0; background: var(--tint); display: flex;
-  align-items: center; justify-content: center; font-size: 11px; color: var(--muted); text-align: center;
-}
+.ad-img { width: 96px; height: 96px; flex-shrink: 0; object-fit: cover; }
 .ad-body { padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; font-size: 13px; }
 .ad-body strong { font-size: 15px; }
 .ad-open { align-self: flex-end; font-weight: 700; color: var(--link); font-size: 14px; }
@@ -229,6 +235,7 @@ p { margin: 0; }
   .brand img { width: 36px; height: 36px; }
   .hero-body, .privacy, .two-col, .legal, .stats { grid-template-columns: minmax(0, 1fr); }
   .hero-body { padding: 24px 0 56px; }
+  .hero-phone { justify-self: center; width: min(280px, 100%); }
   .grid-3, .grid-2 { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .features { gap: 24px; }
   .split, .cta { flex-direction: column; align-items: flex-start; }

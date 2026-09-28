@@ -89,6 +89,8 @@ TEXTS = {
             ("estadisticas_graficos_es.png", "Gráficos de barras con las veces en cada posición y los giros de cada mes", "Veces en cada posición y giros por mes"),
         ],
         "stats_example": "Capturas de la app con datos de ejemplo de un año.",
+        "hero_shot_alt": "Pantalla de inicio de GiraColchón con tres colchones de distinto aspecto; a la cama de matrimonio le toca girar hoy",
+        "step_alts": ["Formulario del colchón: forma de la cabecera y colores de la cabecera y del somier", "Ficha del colchón: próximo giro hoy, con los botones Girar ahora, Historial y Estadísticas", "Pantalla de giro: animación que muestra cómo rotar el colchón de la cabeza a los pies"],
         "hero_art_alt": "Dibujo de la app: un colchón volteándose sobre la cama",
         "how_kicker": "Cómo funciona",
         "how_h2": "Tres pasos y te olvidas del calendario",
@@ -148,7 +150,7 @@ TEXTS = {
             ("Después de girar", "Al confirmar un giro, junto al mensaje de «hecho»."),
         ],
         "ads_where_note": "Tarjetas integradas en la app: nunca a pantalla completa ni en las notificaciones.",
-        "ad_caption": "Así se ve la tarjeta en la app",
+        "ad_caption": "Así se ve la tarjeta en la app (ejemplo)",
         "ad_image": "Imagen<br>96 × 96",
         "ad_label": "Patrocinado · Tu marca",
         "ad_title": "El título de tu oferta",
@@ -242,6 +244,8 @@ TEXTS = {
             ("estadisticas_graficos_ca.png", "Gràfics de barres amb les vegades en cada posició i els girs de cada mes", "Vegades en cada posició i girs per mes"),
         ],
         "stats_example": "Captures de l'app amb dades d'exemple d'un any.",
+        "hero_shot_alt": "Pantalla d'inici de GiraColchón amb tres matalassos d'aspecte diferent; al llit de matrimoni li toca girar hui",
+        "step_alts": ["Formulari del matalàs: forma del capçal i colors del capçal i del somier", "Fitxa del matalàs: pròxim gir hui, amb els botons Gira ara, Historial i Estadístiques", "Pantalla de gir: animació que mostra com rotar el matalàs del cap als peus"],
         "hero_art_alt": "Dibuix de l'app: un matalàs que es volteja sobre el llit",
         "how_kicker": "Com funciona",
         "how_h2": "Tres passos i t'oblides del calendari",
@@ -300,7 +304,7 @@ TEXTS = {
             ("Després de girar", "En confirmar un gir, al costat del missatge de «fet»."),
         ],
         "ads_where_note": "Targetes integrades en l'app: mai a pantalla completa ni en les notificacions.",
-        "ad_caption": "Així es veu la targeta en l'app",
+        "ad_caption": "Així es veu la targeta en l'app (exemple)",
         "ad_image": "Imatge<br>96 × 96",
         "ad_label": "Patrocinat · La teua marca",
         "ad_title": "El títol de la teua oferta",
@@ -393,6 +397,8 @@ TEXTS = {
             ("estadisticas_graficos_en.png", "Bar charts of times in each position and turns per month", "Times in each position and turns per month"),
         ],
         "stats_example": "Screenshots of the app with a year of sample data.",
+        "hero_shot_alt": "GiraColchón home screen with three mattresses that look different; the double bed is due for turning today",
+        "step_alts": ["Mattress form: headboard shape and headboard and base colours", "Mattress page: next turn today, with Turn now, History and Statistics buttons", "Turning screen: an animation showing how to rotate the mattress head to foot"],
         "hero_art_alt": "Drawing from the app: a mattress flipping over on the bed",
         "how_kicker": "How it works",
         "how_h2": "Three steps and you can forget the calendar",
@@ -451,7 +457,7 @@ TEXTS = {
             ("After turning", "When a turn is confirmed, next to the “done” message."),
         ],
         "ads_where_note": "Cards built into the app: never full screen and never in notifications.",
-        "ad_caption": "This is how the card looks in the app",
+        "ad_caption": "This is how the card looks in the app (example)",
         "ad_image": "Image<br>96 × 96",
         "ad_label": "Sponsored · Your brand",
         "ad_title": "Your offer's title",
@@ -655,10 +661,13 @@ def page_home(lang):
 <span class="btn btn-play" aria-disabled="true"><span class="btn-2l"><small>{t['play_soon']}</small><span>Google Play</span></span></span>
 </div>
 </div>
-<div class="hero-art"><img src="{asset('img/flip_mid.png')}" alt="{escape(t['hero_art_alt'])}" width="400" height="280"></div>
+<div class="hero-phone"><img src="{asset(f'img/pantalla_inicio_{lang}.webp')}" alt="{escape(t['hero_shot_alt'])}" width="412" height="620"></div>
 </div>"""
+    shots = ["aspecto", "ficha", "giro"]
     steps = "".join(
-        f'<li class="card"><div class="num">{i}</div><h3>{h}</h3><p class="muted">{p}</p></li>'
+        f'<li class="card"><img class="step-shot" src="{asset(f"img/pantalla_{shots[i - 1]}_{lang}.webp")}" '
+        f'alt="{escape(t["step_alts"][i - 1])}" width="412" height="560" loading="lazy">'
+        f'<div class="num">{i}</div><h3>{h}</h3><p class="muted">{p}</p></li>'
         for i, (h, p) in enumerate(t["steps"], 1)
     )
     features = "".join(
@@ -746,7 +755,7 @@ def page_ads(lang):
 <p class="muted" style="margin-top:24px">{t['ads_where_note']}</p></div>
 <div class="phone"><div class="phone-screen">
 <div class="muted" style="font-size:13px;font-weight:600;padding:0 4px">{t['ad_caption']}</div>
-<div class="ad"><div class="ad-img">{t['ad_image']}</div><div class="ad-body">
+<div class="ad"><img class="ad-img" src="{rel(SLUGS['ads'][lang], 'assets/img/demo-anuncio.png')}" alt="" width="96" height="96"><div class="ad-body">
 <span class="muted" style="font-size:11px">{t['ad_label']}</span><strong>{t['ad_title']}</strong>
 <span class="muted">{t['ad_text']}</span><span class="ad-open">{t['ad_open']}</span></div></div>
 </div></div>
