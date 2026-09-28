@@ -32,7 +32,7 @@ La app guarda el catálogo 24 horas. Para ver un cambio antes, borra los datos d
 
 - [ ] `python3 build.py` sin `--demo`
 - [ ] Crear el alias de correo `contacto@martinezpenya.es`
-- [ ] Rellenar `[NOMBRE Y APELLIDOS]` en la política de privacidad (tres idiomas)
+- [x] Nombre del responsable en la política de privacidad
 - [ ] Añadir capturas reales del móvil
 - [ ] DNS: `CNAME giracolchon → martinezpenya.github.io`
 - [ ] GitHub: Pages desde `main` / `docs`, dominio `giracolchon.martinezpenya.es`, Enforce HTTPS

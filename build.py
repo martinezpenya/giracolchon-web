@@ -139,7 +139,7 @@ TEXTS = {
         "summary": "<strong>En resumen:</strong> GiraColchón no tiene cuentas, no recoge datos personales y guarda todo lo que introduces solo en tu móvil.",
         "legal": [
             ("responsable", "Responsable", [
-                "[NOMBRE Y APELLIDOS], desarrollador de la app. Contacto: {mail}.",
+                "David Martínez Peña, desarrollador de la app. Contacto: {mail}.",
             ]),
             ("datos", "Datos que guarda la app", [
                 "Los colchones, sus medidas, el historial de giros, los ajustes y las fotos o documentos que adjuntas se guardan en el almacenamiento interno del móvil. No se envían a ningún servidor.",
@@ -270,7 +270,7 @@ TEXTS = {
         "summary": "<strong>En resum:</strong> GiraColchón no té comptes, no arreplega dades personals i guarda tot el que introduïxes només al teu mòbil.",
         "legal": [
             ("responsable", "Responsable", [
-                "[NOM I COGNOMS], desenvolupador de l'app. Contacte: {mail}.",
+                "David Martínez Peña, desenvolupador de l'app. Contacte: {mail}.",
             ]),
             ("dades", "Dades que guarda l'app", [
                 "Els matalassos, les seues mides, l'historial de girs, els ajustos i les fotos o documents que adjuntes es guarden en l'emmagatzematge intern del mòbil. No s'envien a cap servidor.",
@@ -401,7 +401,7 @@ TEXTS = {
         "summary": "<strong>In short:</strong> GiraColchón has no accounts, collects no personal data and keeps everything you enter on your phone only.",
         "legal": [
             ("controller", "Data controller", [
-                "[FULL NAME], developer of the app. Contact: {mail}.",
+                "David Martínez Peña, developer of the app. Contact: {mail}.",
             ]),
             ("data", "Data the app stores", [
                 "Your mattresses, their sizes, the turning history, settings and any photos or documents you attach are stored in the phone's internal storage. They are not sent to any server.",
