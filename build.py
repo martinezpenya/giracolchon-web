@@ -27,6 +27,9 @@ AUTHOR_SITE = "https://martinezpenya.es"
 APK_URL = "https://github.com/martinezpenya/giracolchon-web/releases/latest/download/giracolchon.apk"
 YEAR = 2026
 
+# Cambia con cada versión de la hoja de estilos para saltarse la caché del navegador.
+CSS_VERSION = __import__("hashlib").sha256((ROOT / "src/style.css").read_bytes()).hexdigest()[:10]
+
 LANGS = ["es", "ca", "en"]
 # Ruta de cada página por idioma (sin barra inicial; "" = portada).
 SLUGS = {
@@ -588,7 +591,7 @@ def layout(lang, page, title, desc, hero, main):
 <meta name="theme-color" content="#2e3a73">
 <link rel="icon" type="image/png" href="{asset('img/favicon.png')}">
 <link rel="apple-touch-icon" href="{asset('img/apple-touch-icon.png')}">
-<link rel="stylesheet" href="{asset('style.css')}">
+<link rel="stylesheet" href="{asset('style.css')}?v={CSS_VERSION}">
 </head>
 <body>
 <section class="hero">
@@ -630,8 +633,8 @@ def page_home(lang):
 <h1>{t['hero_h1']}</h1>
 <p class="lead">{t['hero_lead']}</p>
 <div class="actions">
-<a class="btn btn-light" href="{APK_URL}">{svg(ICONS['download'], 24, '#2e3a73', 1.9)}<span class="btn-2l"><small>{t['dl_small']}</small>{t['dl_btn']}</span></a>
-<span class="btn btn-play" aria-disabled="true"><span><small>{t['play_soon']}</small>Google Play</span></span>
+<a class="btn btn-light" href="{APK_URL}">{svg(ICONS['download'], 24, '#2e3a73', 1.9)}<span class="btn-2l"><small>{t['dl_small']}</small><span>{t['dl_btn']}</span></span></a>
+<span class="btn btn-play" aria-disabled="true"><span class="btn-2l"><small>{t['play_soon']}</small><span>Google Play</span></span></span>
 </div>
 </div>
 <div class="hero-art"><img src="{asset('img/flip_mid.png')}" alt="{escape(t['hero_art_alt'])}" width="400" height="280"></div>

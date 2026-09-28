@@ -110,12 +110,11 @@ p { margin: 0; }
 .btn-ghost:hover { color: #fff; background: rgba(255,255,255,.1); }
 .btn-dark { background: var(--deep); color: #fff; }
 .btn-dark:hover { color: #fff; background: #26305f; }
-.btn-2l { display: flex; flex-direction: column; line-height: 1.1; }
-.btn-2l small { font-size: 12px; color: var(--muted); font-weight: 500; }
+.btn-2l { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+.btn-2l small { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
+.btn-play .btn-2l small { color: #c9c6dd; }
 .btn-play { background: #0f1226; color: #fff; cursor: default; }
 .btn-play:hover { color: #fff; }
-.btn-play span { display: flex; flex-direction: column; line-height: 1.1; }
-.btn-play small { font-size: 12px; color: #c9c6dd; font-weight: 500; }
 
 /* Tarjetas y rejillas */
 .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
