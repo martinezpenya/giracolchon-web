@@ -755,9 +755,9 @@ def page_ads(lang):
 <p class="muted" style="margin-top:24px">{t['ads_where_note']}</p></div>
 <div class="phone"><div class="phone-screen">
 <div class="muted" style="font-size:13px;font-weight:600;padding:0 4px">{t['ad_caption']}</div>
-<div class="ad"><img class="ad-img" src="{rel(SLUGS['ads'][lang], 'assets/img/demo-anuncio.png')}" alt="" width="96" height="96"><div class="ad-body">
+<div class="promo"><img class="promo-img" src="{rel(SLUGS['ads'][lang], 'assets/img/demo-anuncio.png')}" alt="" width="96" height="96"><div class="promo-body">
 <span class="muted" style="font-size:11px">{t['ad_label']}</span><strong>{t['ad_title']}</strong>
-<span class="muted">{t['ad_text']}</span><span class="ad-open">{t['ad_open']}</span></div></div>
+<span class="muted">{t['ad_text']}</span><span class="promo-open">{t['ad_open']}</span></div></div>
 </div></div>
 </div></section>
 <section class="section"><div class="wrap two-col">

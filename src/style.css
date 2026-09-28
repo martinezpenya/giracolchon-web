@@ -193,11 +193,11 @@ p { margin: 0; }
   box-shadow: 0 24px 64px rgba(10,12,40,.25); margin: 0 auto;
 }
 .phone-screen { border-radius: 30px; background: var(--ground); padding: 28px 16px 36px; display: flex; flex-direction: column; gap: 12px; }
-.ad { background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; overflow: hidden; }
-.ad-img { width: 96px; height: 96px; flex-shrink: 0; object-fit: cover; }
-.ad-body { padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; font-size: 13px; }
-.ad-body strong { font-size: 15px; }
-.ad-open { align-self: flex-end; font-weight: 700; color: var(--link); font-size: 14px; }
+.promo { background: #fff; border: 1px solid var(--line); border-radius: 16px; display: flex; overflow: hidden; }
+.promo-img { width: 96px; height: 96px; flex-shrink: 0; object-fit: cover; }
+.promo-body { padding: 12px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; font-size: 13px; }
+.promo-body strong { font-size: 15px; }
+.promo-open { align-self: flex-end; font-weight: 700; color: var(--link); font-size: 14px; }
 .two-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .list { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 18px; }
 
