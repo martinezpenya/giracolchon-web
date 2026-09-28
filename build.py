@@ -76,6 +76,7 @@ TEXTS = {
         "dl_steps": [
             "Descarga el archivo desde el móvil en el que la vas a usar.",
             "Si Android te lo pide, permite que el navegador instale aplicaciones de origen desconocido.",
+            "Si Play Protect avisa de que la app es desconocida, pulsa «Más detalles» y después «Instalar de todos modos».",
             "Abre el archivo y pulsa Instalar.",
         ],
         "dl_note": "La app no se actualiza sola: las versiones nuevas se publican aquí. Cuando esté en Google Play podrás pasarte sin desinstalar y sin perder tus datos.",
@@ -228,6 +229,7 @@ TEXTS = {
         "dl_steps": [
             "Descarrega l'arxiu des del mòbil en què la faràs servir.",
             "Si Android t'ho demana, permet que el navegador instal·le aplicacions d'origen desconegut.",
+            "Si Play Protect avisa que l'app és desconeguda, prem «Més detalls» i després «Instal·la igualment».",
             "Obri l'arxiu i prem Instal·la.",
         ],
         "dl_note": "L'app no s'actualitza sola: les versions noves es publiquen ací. Quan estiga a Google Play podràs passar-t'hi sense desinstal·lar i sense perdre les teues dades.",
@@ -378,6 +380,7 @@ TEXTS = {
         "dl_steps": [
             "Download the file on the phone you will use it on.",
             "If Android asks, allow your browser to install apps from unknown sources.",
+            "If Play Protect says the app is unknown, tap “More details” and then “Install anyway”.",
             "Open the file and tap Install.",
         ],
         "dl_note": "The app does not update itself: new versions are published here. Once it is on Google Play you can switch without uninstalling or losing your data.",
