@@ -23,6 +23,8 @@ DOMAIN = "giracolchon.martinezpenya.es"
 BASE_URL = f"https://{DOMAIN}"
 EMAIL = "contacto@martinezpenya.es"
 AUTHOR_SITE = "https://martinezpenya.es"
+# El APK se publica en Releases de este repo; «latest» apunta siempre a la última versión.
+APK_URL = "https://github.com/martinezpenya/giracolchon-web/releases/latest/download/giracolchon.apk"
 YEAR = 2026
 
 LANGS = ["es", "ca", "en"]
@@ -49,6 +51,16 @@ TEXTS = {
         "hero_kicker": "App gratuita para Android",
         "hero_h1": "Tu colchón, siempre en su mejor cara",
         "hero_lead": "GiraColchón te avisa de cuándo toca girar o voltear cada colchón, te enseña cómo hacerlo con una animación y vigila la garantía y la vida útil.",
+        "dl_btn": "Descargar APK",
+        "dl_small": "Android 8.0 o posterior",
+        "dl_kicker": "Descarga",
+        "dl_h2": "Instálala ya, mientras llega a Google Play",
+        "dl_steps": [
+            "Descarga el archivo desde el móvil en el que la vas a usar.",
+            "Si Android te lo pide, permite que el navegador instale aplicaciones de origen desconocido.",
+            "Abre el archivo y pulsa Instalar.",
+        ],
+        "dl_note": "La app no se actualiza sola: las versiones nuevas se publican aquí. Cuando esté en Google Play podrás pasarte sin desinstalar y sin perder tus datos.",
         "hero_art_alt": "Dibujo de la app: un colchón volteándose sobre la cama",
         "how_kicker": "Cómo funciona",
         "how_h2": "Tres pasos y te olvidas del calendario",
@@ -162,7 +174,7 @@ TEXTS = {
                 "Como no tratamos datos personales, no hay nada que consultar, corregir ni borrar en nuestros servidores. Para borrar tus datos, desinstala la app o bórralos desde los ajustes de Android. Para cualquier duda, escribe a {mail}.",
             ]),
             ("web", "Esta web", [
-                "Esta web está alojada en GitHub Pages, que recibe la dirección IP de quien la visita para servir las páginas. No usa cookies, analíticas ni fuentes de terceros.",
+                "Esta web está alojada en GitHub Pages y el APK se descarga desde GitHub Releases. GitHub recibe la dirección IP de quien visita la web o descarga el archivo. No usa cookies, analíticas ni fuentes de terceros.",
             ]),
             ("cambios", "Cambios", [
                 "Si esta política cambia, se publicará aquí con una nueva fecha de actualización.",
@@ -182,6 +194,16 @@ TEXTS = {
         "hero_kicker": "App gratuïta per a Android",
         "hero_h1": "El teu matalàs, sempre per la seua millor cara",
         "hero_lead": "GiraColchón t'avisa de quan toca girar o voltejar cada matalàs, t'ensenya com fer-ho amb una animació i vigila la garantia i la vida útil.",
+        "dl_btn": "Descarrega l'APK",
+        "dl_small": "Android 8.0 o posterior",
+        "dl_kicker": "Descàrrega",
+        "dl_h2": "Instal·la-la ja, mentre arriba a Google Play",
+        "dl_steps": [
+            "Descarrega l'arxiu des del mòbil en què la faràs servir.",
+            "Si Android t'ho demana, permet que el navegador instal·le aplicacions d'origen desconegut.",
+            "Obri l'arxiu i prem Instal·la.",
+        ],
+        "dl_note": "L'app no s'actualitza sola: les versions noves es publiquen ací. Quan estiga a Google Play podràs passar-t'hi sense desinstal·lar i sense perdre les teues dades.",
         "hero_art_alt": "Dibuix de l'app: un matalàs que es volteja sobre el llit",
         "how_kicker": "Com funciona",
         "how_h2": "Tres passos i t'oblides del calendari",
@@ -293,7 +315,7 @@ TEXTS = {
                 "Com que no tractem dades personals, no hi ha res a consultar, corregir ni esborrar en els nostres servidors. Per a esborrar les teues dades, desinstal·la l'app o esborra-les des dels ajustos d'Android. Per a qualsevol dubte, escriu a {mail}.",
             ]),
             ("web", "Esta web", [
-                "Esta web està allotjada en GitHub Pages, que rep l'adreça IP de qui la visita per a servir les pàgines. No usa galetes, analítiques ni fonts de tercers.",
+                "Esta web està allotjada en GitHub Pages i l'APK es descarrega des de GitHub Releases. GitHub rep l'adreça IP de qui visita la web o descarrega l'arxiu. No usa galetes, analítiques ni fonts de tercers.",
             ]),
             ("canvis", "Canvis", [
                 "Si esta política canvia, es publicarà ací amb una nova data d'actualització.",
@@ -313,6 +335,16 @@ TEXTS = {
         "hero_kicker": "Free app for Android",
         "hero_h1": "Your mattress, always on its best side",
         "hero_lead": "GiraColchón reminds you when each mattress needs turning or flipping, shows you how with an animation and keeps track of warranty and lifespan.",
+        "dl_btn": "Download APK",
+        "dl_small": "Android 8.0 or later",
+        "dl_kicker": "Download",
+        "dl_h2": "Install it now, while it makes its way to Google Play",
+        "dl_steps": [
+            "Download the file on the phone you will use it on.",
+            "If Android asks, allow your browser to install apps from unknown sources.",
+            "Open the file and tap Install.",
+        ],
+        "dl_note": "The app does not update itself: new versions are published here. Once it is on Google Play you can switch without uninstalling or losing your data.",
         "hero_art_alt": "Drawing from the app: a mattress flipping over on the bed",
         "how_kicker": "How it works",
         "how_h2": "Three steps and you can forget the calendar",
@@ -424,7 +456,7 @@ TEXTS = {
                 "As we process no personal data, there is nothing on our servers to access, correct or delete. To delete your data, uninstall the app or clear it from Android settings. For any questions, email {mail}.",
             ]),
             ("website", "This website", [
-                "This website is hosted on GitHub Pages, which receives visitors' IP addresses to serve the pages. It uses no cookies, analytics or third-party fonts.",
+                "This website is hosted on GitHub Pages and the APK is downloaded from GitHub Releases. GitHub receives the IP address of anyone who visits the site or downloads the file. It uses no cookies, analytics or third-party fonts.",
             ]),
             ("changes", "Changes", [
                 "If this policy changes, the new version will be published here with a new date.",
@@ -473,6 +505,7 @@ ICONS = {
     "translate": '<path d="M4 5h9M8.5 3v2M6 5c0 4 3 7 6 8M11 5c0 4-3 8-7 9"/><path d="M13 21l4-9 4 9M14.5 18h5"/>',
     "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
+    "download": '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>',
     "play": '<path d="M5 3.5v17l9-8.5-9-8.5z"/><path d="M14 12l3.5-3.3L20 10.2c.9.5.9 1.3 0 1.8l-2.5 1.4L14 12z"/>',
 }
 
@@ -571,8 +604,8 @@ def page_home(lang):
 <h1>{t['hero_h1']}</h1>
 <p class="lead">{t['hero_lead']}</p>
 <div class="actions">
+<a class="btn btn-light" href="{APK_URL}">{svg(ICONS['download'], 24, '#2e3a73', 1.9)}<span class="btn-2l"><small>{t['dl_small']}</small>{t['dl_btn']}</span></a>
 <span class="btn btn-play" aria-disabled="true">{svg(ICONS['play'], 26, '#ffffff', 1.8)}<span><small>{t['play_soon']}</small>Google Play</span></span>
-<a class="btn btn-ghost" href="#como-funciona">{t['nav_how']}</a>
 </div>
 </div>
 <div class="hero-art"><img src="{asset('img/flip_mid.png')}" alt="{escape(t['hero_art_alt'])}" width="400" height="280"></div>
@@ -591,7 +624,15 @@ def page_home(lang):
         for f, alt, size, cap in t["looks"]
     )
     checks = "".join(f"<li>{svg(ICONS[ic], 24, '#4a5fa8', 1.8)}{txt}</li>" for ic, txt in t["priv_checks"])
-    main = f"""<section class="section" id="como-funciona"><div class="wrap">
+    dl_steps = "".join(
+        f'<li><span class="dot">{i}</span><p>{p}</p></li>' for i, p in enumerate(t["dl_steps"], 1)
+    )
+    main = f"""<section class="section band-white" id="descargar"><div class="wrap two-col">
+<div class="stack"><div class="kicker">{t['dl_kicker']}</div><h2 class="section-title">{t['dl_h2']}</h2>
+<div class="actions"><a class="btn btn-dark" href="{APK_URL}">{svg(ICONS['download'], 24, '#ffffff', 1.9)}{t['dl_btn']}</a></div></div>
+<div class="stack" style="gap:24px"><ol class="placements" style="margin:0">{dl_steps}</ol><p class="muted">{t['dl_note']}</p></div>
+</div></section>
+<section class="section" id="como-funciona"><div class="wrap">
 <div class="stack"><div class="kicker">{t['how_kicker']}</div><h2 class="section-title">{t['how_h2']}</h2></div>
 <ol class="steps grid-3">{steps}</ol>
 </div></section>
