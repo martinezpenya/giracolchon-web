@@ -25,6 +25,21 @@ EMAIL = "contacto@martinezpenya.es"
 AUTHOR_SITE = "https://martinezpenya.es"
 # El APK se publica en Releases de este repo; «latest» apunta siempre a la última versión.
 APK_URL = "https://github.com/martinezpenya/giracolchon-web/releases/latest/download/giracolchon.apk"
+
+# Última versión publicada. La app (variante web) lee docs/version.json para avisar de
+# versiones nuevas y comprueba la SHA-256 del APK antes de instalarlo.
+# Al publicar una versión: crear la release vX.Y.Z con giracolchon.apk y actualizar esto.
+RELEASE = {
+    "version": "1.0.1",
+    "build": 2,
+    "sha256": "90e438c99f56674334d2838fa0296a4f2597f7e3e442dbc5631e1beca39851cb",
+    "size": 66096636,
+    "notes": {
+        "es": "Ahora la app avisa de las versiones nuevas y se actualiza desde la web.",
+        "ca": "Ara l'app avisa de les versions noves i s'actualitza des de la web.",
+        "en": "The app now tells you about new versions and updates itself from the website.",
+    },
+}
 YEAR = 2026
 
 # Cambia con cada versión de la hoja de estilos para saltarse la caché del navegador.
@@ -790,6 +805,13 @@ def main():
         catalog = {"enabled": True, "campaigns": [demo]}
     (OUT / "sponsors.json").write_text(
         json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+    release = dict(
+        RELEASE,
+        url=f"https://github.com/martinezpenya/giracolchon-web/releases/download/v{RELEASE['version']}/giracolchon.apk",
+    )
+    (OUT / "version.json").write_text(
+        json.dumps(release, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     (OUT / "CNAME").write_text(DOMAIN + "\n", encoding="utf-8")
     (OUT / ".nojekyll").write_text("", encoding="utf-8")

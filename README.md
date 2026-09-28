@@ -28,6 +28,18 @@ flutter build apk --debug --dart-define=SPONSORS_URL=http://<IP>:8080/sponsors.j
 
 La app guarda el catálogo 24 horas. Para ver un cambio antes, borra los datos de la app.
 
+## Publicar una versión nueva de la app
+
+1. En el repo de la app: subir `version` en `pubspec.yaml` y compilar la variante web:
+   `flutter build apk --release --flavor web --obfuscate --split-debug-info=build/symbols/<versión>
+   --dart-define=SPONSORS_URL=https://giracolchon.martinezpenya.es/sponsors.json`
+2. Crear la release `v<versión>` en este repo con el archivo `giracolchon.apk`
+   (`app-web-release.apk` renombrado) y su `.sha256`.
+3. Actualizar `RELEASE` en `build.py` (versión, build, sha256, tamaño y novedades), ejecutar
+   `python3 build.py` y subir. La app avisa a partir de ese momento (lo comprueba cada 12 horas).
+
+Primero la release y después la web: así `version.json` nunca apunta a un archivo que no existe.
+
 ## Antes de publicar
 
 - [ ] `python3 build.py` sin `--demo`
