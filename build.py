@@ -61,6 +61,15 @@ TEXTS = {
             "Abre el archivo y pulsa Instalar.",
         ],
         "dl_note": "La app no se actualiza sola: las versiones nuevas se publican aquí. Cuando esté en Google Play podrás pasarte sin desinstalar y sin perder tus datos.",
+        "stats_kicker": "Estadísticas",
+        "stats_h2": "Mira cómo cuidas tus colchones",
+        "stats_p": "La app lleva la cuenta de cada giro y te enseña si el desgaste se reparte bien entre las cuatro posiciones, para cada colchón o para todos juntos.",
+        "stats_items": ["Giros hechos y porcentaje a tiempo", "Retraso medio, racha actual y mejor racha", "Días que ha pasado en cada posición", "Veces en cada posición y giros por mes"],
+        "stats_shots": [
+            ("estadisticas_resumen_es.png", "Pantalla de estadísticas: 13 giros, 85 % a tiempo, racha de 4 y un gráfico circular del tiempo en cada posición", "Resumen y tiempo en cada posición"),
+            ("estadisticas_graficos_es.png", "Gráficos de barras con las veces en cada posición y los giros de cada mes", "Veces en cada posición y giros por mes"),
+        ],
+        "stats_example": "Capturas de la app con datos de ejemplo de un año.",
         "hero_art_alt": "Dibujo de la app: un colchón volteándose sobre la cama",
         "how_kicker": "Cómo funciona",
         "how_h2": "Tres pasos y te olvidas del calendario",
@@ -204,6 +213,15 @@ TEXTS = {
             "Obri l'arxiu i prem Instal·la.",
         ],
         "dl_note": "L'app no s'actualitza sola: les versions noves es publiquen ací. Quan estiga a Google Play podràs passar-t'hi sense desinstal·lar i sense perdre les teues dades.",
+        "stats_kicker": "Estadístiques",
+        "stats_h2": "Mira com cuides els teus matalassos",
+        "stats_p": "L'app porta el compte de cada gir i t'ensenya si el desgast es reparteix bé entre les quatre posicions, per a cada matalàs o per a tots junts.",
+        "stats_items": ["Girs fets i percentatge a temps", "Retard mitjà, ratxa actual i millor ratxa", "Dies que ha passat en cada posició", "Vegades en cada posició i girs per mes"],
+        "stats_shots": [
+            ("estadisticas_resumen_ca.png", "Pantalla d'estadístiques: 13 girs, 85 % a temps, ratxa de 4 i un gràfic circular del temps en cada posició", "Resum i temps en cada posició"),
+            ("estadisticas_graficos_ca.png", "Gràfics de barres amb les vegades en cada posició i els girs de cada mes", "Vegades en cada posició i girs per mes"),
+        ],
+        "stats_example": "Captures de l'app amb dades d'exemple d'un any.",
         "hero_art_alt": "Dibuix de l'app: un matalàs que es volteja sobre el llit",
         "how_kicker": "Com funciona",
         "how_h2": "Tres passos i t'oblides del calendari",
@@ -345,6 +363,15 @@ TEXTS = {
             "Open the file and tap Install.",
         ],
         "dl_note": "The app does not update itself: new versions are published here. Once it is on Google Play you can switch without uninstalling or losing your data.",
+        "stats_kicker": "Statistics",
+        "stats_h2": "See how well you look after your mattresses",
+        "stats_p": "The app counts every turn and shows whether wear is spread evenly across the four positions, for each mattress or all of them together.",
+        "stats_items": ["Turns done and share on time", "Average delay, current streak and best streak", "Days spent in each position", "Times in each position and turns per month"],
+        "stats_shots": [
+            ("estadisticas_resumen_en.png", "Statistics screen: 13 turns, 85% on time, a streak of 4 and a donut chart of time in each position", "Summary and time in each position"),
+            ("estadisticas_graficos_en.png", "Bar charts of times in each position and turns per month", "Times in each position and turns per month"),
+        ],
+        "stats_example": "Screenshots of the app with a year of sample data.",
         "hero_art_alt": "Drawing from the app: a mattress flipping over on the bed",
         "how_kicker": "How it works",
         "how_h2": "Three steps and you can forget the calendar",
@@ -506,7 +533,6 @@ ICONS = {
     "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     "menu": '<path d="M4 7h16M4 12h16M4 17h16"/>',
     "download": '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>',
-    "play": '<path d="M5 3.5v17l9-8.5-9-8.5z"/><path d="M14 12l3.5-3.3L20 10.2c.9.5.9 1.3 0 1.8l-2.5 1.4L14 12z"/>',
 }
 
 # ----------------------------------------------------------------- plantillas
@@ -605,7 +631,7 @@ def page_home(lang):
 <p class="lead">{t['hero_lead']}</p>
 <div class="actions">
 <a class="btn btn-light" href="{APK_URL}">{svg(ICONS['download'], 24, '#2e3a73', 1.9)}<span class="btn-2l"><small>{t['dl_small']}</small>{t['dl_btn']}</span></a>
-<span class="btn btn-play" aria-disabled="true">{svg(ICONS['play'], 26, '#ffffff', 1.8)}<span><small>{t['play_soon']}</small>Google Play</span></span>
+<span class="btn btn-play" aria-disabled="true"><span><small>{t['play_soon']}</small>Google Play</span></span>
 </div>
 </div>
 <div class="hero-art"><img src="{asset('img/flip_mid.png')}" alt="{escape(t['hero_art_alt'])}" width="400" height="280"></div>
@@ -622,6 +648,14 @@ def page_home(lang):
         f'<figure><img src="{asset("img/" + f)}" alt="{escape(alt)}" width="400" height="280" loading="lazy">'
         f'<figcaption class="muted"><strong style="color:var(--ink)">{size}</strong> · {cap}</figcaption></figure>'
         for f, alt, size, cap in t["looks"]
+    )
+    stats_items = "".join(
+        f"<li>{svg(ICONS['chart'], 22, '#4a5fa8', 1.8)}{x}</li>" for x in t["stats_items"]
+    )
+    stats_shots = "".join(
+        f'<figure><div class="shot"><img src="{asset("img/" + f)}" alt="{escape(alt)}" width="412" '
+        f'height="{525 if "resumen" in f else 430}" loading="lazy"></div><figcaption class="muted">{cap}</figcaption></figure>'
+        for f, alt, cap in t["stats_shots"]
     )
     checks = "".join(f"<li>{svg(ICONS[ic], 24, '#4a5fa8', 1.8)}{txt}</li>" for ic, txt in t["priv_checks"])
     dl_steps = "".join(
@@ -640,7 +674,13 @@ def page_home(lang):
 <h2 class="section-title">{t['features_h2']}</h2>
 <div class="grid-3 features">{features}</div>
 </div></section>
-<section class="section band-white"><div class="wrap">
+<section class="section band-white" id="estadisticas"><div class="wrap stats">
+<div class="stack" style="gap:20px"><div class="kicker">{t['stats_kicker']}</div><h2 class="section-title">{t['stats_h2']}</h2>
+<p class="muted" style="font-size:18px">{t['stats_p']}</p><ul class="stat-list">{stats_items}</ul>
+<p class="muted" style="font-size:14px">{t['stats_example']}</p></div>
+<div class="shots">{stats_shots}</div>
+</div></section>
+<section class="section"><div class="wrap">
 <div class="split"><h2 class="section-title" style="max-width:640px">{t['looks_h2']}</h2><p class="muted" style="font-size:18px">{t['looks_p']}</p></div>
 <div class="grid-3 looks">{looks}</div>
 </div></section>
