@@ -1,12 +1,12 @@
 {
-  "version": "1.0.1",
-  "build": 2,
-  "sha256": "90e438c99f56674334d2838fa0296a4f2597f7e3e442dbc5631e1beca39851cb",
-  "size": 66096636,
+  "version": "1.0.2",
+  "build": 3,
+  "sha256": "2a91f73a16abca0280fa3eb376e53514f205f9e47ee5ce7c4afc31ce5f782185",
+  "size": 66274612,
   "notes": {
-    "es": "Ahora la app avisa de las versiones nuevas y se actualiza desde la web.",
-    "ca": "Ara l'app avisa de les versions noves i s'actualitza des de la web.",
-    "en": "The app now tells you about new versions and updates itself from the website."
+    "es": "Pantalla de bienvenida con el icono de la app al abrirla.",
+    "ca": "Pantalla de benvinguda amb la icona de l'app en obrir-la.",
+    "en": "Splash screen with the app icon when it opens."
   },
-  "url": "https://github.com/martinezpenya/giracolchon-web/releases/download/v1.0.1/giracolchon.apk"
+  "url": "https://github.com/martinezpenya/giracolchon-web/releases/download/v1.0.2/giracolchon.apk"
 }
