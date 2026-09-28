@@ -71,6 +71,12 @@ p { margin: 0; }
 .brand img { width: 44px; height: 44px; }
 .nav { display: flex; align-items: center; gap: 28px; font-weight: 500; }
 .nav a { color: #fff; text-decoration: none; }
+/* Sobre el degradado los enlaces siguen blancos: el azul oscuro general no se distingue. */
+.brand:hover, .nav a:hover, .lang a:hover { color: #fff; }
+.nav > a:hover { text-decoration: underline; text-underline-offset: 6px; opacity: .85; }
+.brand:hover { opacity: .85; }
+.lang a:not([aria-current="true"]):hover { background: rgba(255,255,255,.15); }
+.lang a[aria-current="true"]:hover { color: var(--deep); }
 .nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
 .lang {
   display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,.35);
