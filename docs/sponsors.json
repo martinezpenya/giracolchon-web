@@ -1,4 +1,32 @@
 {
-  "enabled": false,
-  "campaigns": []
+  "enabled": true,
+  "campaigns": [
+    {
+      "id": "jm-informatica-2026-10",
+      "sponsor": "JM Informática",
+      "title": {
+        "es": "Sigue durmiendo tranquilo, nosotros nos ocupamos de tus copias",
+        "ca": "Continua dormint tranquil, nosaltres ens ocupem de les teues còpies",
+        "en": "Keep sleeping soundly, we'll take care of your backups"
+      },
+      "body": {
+        "es": "Soporte informático para empresas: asistencia técnica, mantenimiento, copias de seguridad y asesoría.",
+        "ca": "Suport informàtic per a empreses: assistència tècnica, manteniment, còpies de seguretat i assessoria.",
+        "en": "IT support for businesses: technical assistance, maintenance, backups and consulting."
+      },
+      "url": "https://www.jminformatica.es/",
+      "placements": [
+        "home",
+        "warrantyEnding",
+        "lifespanEnding",
+        "afterRotation"
+      ],
+      "tags": [
+        "informatica"
+      ],
+      "validFrom": "2026-10-01T00:00:00",
+      "validTo": "2026-10-31T23:59:59",
+      "imageUrl": "https://giracolchon.martinezpenya.es/assets/img/jm-informatica.png"
+    }
+  ]
 }

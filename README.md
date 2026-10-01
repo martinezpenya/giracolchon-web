@@ -13,7 +13,7 @@ servida por GitHub Pages desde la carpeta `docs/`.
 ## Generar
 
 ```bash
-python3 build.py           # web para publicar: sponsors.json vacío y desactivado
+python3 build.py           # web para publicar: sponsors.json con las campañas de CAMPAIGNS
 python3 build.py --demo    # añade un anuncio de prueba a sponsors.json
 ```
 

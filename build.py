@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Genera la web estática de GiraColchón en docs/ (lo que sirve GitHub Pages).
 
-Uso: python3 build.py            (web para publicar)
+Uso: python3 build.py            (web para publicar, con las campañas de CAMPAIGNS)
      python3 build.py --demo     (añade un anuncio de prueba a sponsors.json)
      python3 build.py --demo --base=http://192.168.0.102:8080
                                  (la imagen del anuncio se sirve desde otra dirección,
@@ -519,6 +519,31 @@ TEXTS = {
     },
 }
 
+# Campañas que se publican en sponsors.json. La imagen va en src/img (cuadrada: la app la
+# recorta a 96 × 96). validTo se lee como fecha y hora: sin hora, la campaña acaba a las 00:00.
+CAMPAIGNS = [
+    {
+        "id": "jm-informatica-2026-10",
+        "sponsor": "JM Informática",
+        "title": {
+            "es": "Sigue durmiendo tranquilo, nosotros nos ocupamos de tus copias",
+            "ca": "Continua dormint tranquil, nosaltres ens ocupem de les teues còpies",
+            "en": "Keep sleeping soundly, we'll take care of your backups",
+        },
+        "body": {
+            "es": "Soporte informático para empresas: asistencia técnica, mantenimiento, copias de seguridad y asesoría.",
+            "ca": "Suport informàtic per a empreses: assistència tècnica, manteniment, còpies de seguretat i assessoria.",
+            "en": "IT support for businesses: technical assistance, maintenance, backups and consulting.",
+        },
+        "image": "jm-informatica.png",
+        "url": "https://www.jminformatica.es/",
+        "placements": ["home", "warrantyEnding", "lifespanEnding", "afterRotation"],
+        "tags": ["informatica"],
+        "validFrom": "2026-10-01T00:00:00",
+        "validTo": "2026-10-31T23:59:59",
+    },
+]
+
 # Anuncio sintético para probar las tarjetas en la app (solo con --demo).
 DEMO_CAMPAIGN = {
     "id": "demo-2026",
@@ -810,11 +835,16 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(fn(lang), encoding="utf-8")
     # Catálogo de patrocinio que lee la app (SPONSORS_URL). Vacío hasta la primera campaña.
-    catalog = {"enabled": False, "campaigns": []}
+    base = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--base=")), BASE_URL)
+    img = lambda f: f"{base.rstrip('/')}/assets/img/{f}"
+    campaigns = [
+        {**{k: v for k, v in c.items() if k != "image"}, "imageUrl": img(c["image"])}
+        if "image" in c else c
+        for c in CAMPAIGNS
+    ]
     if "--demo" in sys.argv:
-        base = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--base=")), BASE_URL)
-        demo = dict(DEMO_CAMPAIGN, imageUrl=f"{base.rstrip('/')}/assets/img/demo-anuncio.png")
-        catalog = {"enabled": True, "campaigns": [demo]}
+        campaigns.append(dict(DEMO_CAMPAIGN, imageUrl=img("demo-anuncio.png")))
+    catalog = {"enabled": bool(campaigns), "campaigns": campaigns}
     (OUT / "sponsors.json").write_text(
         json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
