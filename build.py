@@ -30,14 +30,14 @@ APK_URL = "https://github.com/martinezpenya/giracolchon-web/releases/latest/down
 # versiones nuevas y comprueba la SHA-256 del APK antes de instalarlo.
 # Al publicar una versión: crear la release vX.Y.Z con giracolchon.apk y actualizar esto.
 RELEASE = {
-    "version": "1.0.2",
-    "build": 3,
-    "sha256": "2a91f73a16abca0280fa3eb376e53514f205f9e47ee5ce7c4afc31ce5f782185",
-    "size": 66274612,
+    "version": "1.0.3",
+    "build": 4,
+    "sha256": "f7530c9786912a80c86cff45669f729217919c08aa7dea5d6acc86fefbc39981",
+    "size": 66274760,
     "notes": {
-        "es": "Pantalla de bienvenida con el icono de la app al abrirla.",
-        "ca": "Pantalla de benvinguda amb la icona de l'app en obrir-la.",
-        "en": "Splash screen with the app icon when it opens.",
+        "es": "Opción «El mismo día del último giro» y botón «Invítame a un café».",
+        "ca": "Opció «El mateix dia de l'últim gir» i botó «Convida'm a un cafè».",
+        "en": "“Same day as the last rotation” option and a “Buy me a coffee” button.",
     },
 }
 YEAR = 2026
